@@ -27,7 +27,7 @@ if [ ! -d "$TEST_DATA_FLDR" ]; then
     exit 1
 fi
 
-mkdir "$TMP_FLDR"
+mkdir -p "$TMP_FLDR"
 for i in "${!TEST_FILES[@]}"; do
     TEST_FILE="$TEST_DATA_FLDR/${TEST_FILES[$i]}"
     REF_FILE="${REF_FILES[$i]}"

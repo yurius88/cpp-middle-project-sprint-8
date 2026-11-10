@@ -1,0 +1,22 @@
+=================================================================
+==11830==ERROR: AddressSanitizer: new-delete-type-mismatch on 0x73402d3e0010 in thread T0:
+  object passed to delete has wrong type:
+  size of the allocated type:   8 bytes;
+  size of the deallocated type: 1 bytes.
+    #0 0x77202e8fa3fb in operator delete(void*, unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:155
+    #1 0x5c940527828c in main /workspaces/cpp-middle-project-sprint-8/tests/tests_data/leak_example.cpp:17
+    #2 0x77202e230577 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #3 0x77202e23063a in __libc_start_main_impl ../csu/libc-start.c:360
+    #4 0x5c9405278164 in _start (/workspaces/cpp-middle-project-sprint-8/build/leak_example+0x1164) (BuildId: 8ac2adc75305ab01bf4f5750fa1178d205ad67db)
+
+0x73402d3e0010 is located 0 bytes inside of 8-byte region [0x73402d3e0010,0x73402d3e0018)
+allocated by thread T0 here:
+    #0 0x77202e8f92db in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:86
+    #1 0x5c9405278243 in main /workspaces/cpp-middle-project-sprint-8/tests/tests_data/leak_example.cpp:16
+    #2 0x77202e230577 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #3 0x77202e23063a in __libc_start_main_impl ../csu/libc-start.c:360
+    #4 0x5c9405278164 in _start (/workspaces/cpp-middle-project-sprint-8/build/leak_example+0x1164) (BuildId: 8ac2adc75305ab01bf4f5750fa1178d205ad67db)
+
+SUMMARY: AddressSanitizer: new-delete-type-mismatch /workspaces/cpp-middle-project-sprint-8/tests/tests_data/leak_example.cpp:17 in main
+==11830==HINT: if you don't care about these errors you may set ASAN_OPTIONS=new_delete_type_mismatch=0
+==11830==ABORTING

@@ -1,0 +1,25 @@
+#11122│ Note: Google Test filter = PerfRangeFor.ReferenceVersionNotSlower
+#11122│ [==========] Running 1 test from 1 test suite.
+#11122│ [----------] Global test environment set-up.
+#11122│ [----------] 1 test from PerfRangeFor
+#11122│ [ RUN      ] PerfRangeFor.ReferenceVersionNotSlower @ tests/perf_asan_test.cpp:130
+#11122│ ⬇ std::cerr:
+#11122│ /tmp/refactor_tool_perf_test/perf_after.cpp:10:20: remark: Объявлена переменная
+#11122│    10 |     for (const auto obj : vec) {  // Копирова
+#11122│ ⬆ std::cerr
+#11122│ ⬇ std::cerr:
+#11122│ ние без &
+#11122│       |                    ^
+#11122│ ⬆ std::cerr
+#11122│ ⬇ std::cerr:
+#11122│ callgrind Ir: до=
+#11122│ ⬆ std::cerr
+#11122│ ⬇ std::cerr:
+#11122│ 7048571368, после=4447668714 (экономия 36.8997%)
+#11122│ ⬆ std::cerr
+#11122│ [       OK ] PerfRangeFor.ReferenceVersionNotSlower (81590 ms)
+#11122│ 
+#11122│ [----------] 1 test from PerfRangeFor (81590 ms total)
+#11122│ 
+#11122│ [==========] 1 test from 1 test suite ran. (81590 ms total)
+#11122│ [  PASSED  ] 1 test.

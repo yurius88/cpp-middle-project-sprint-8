@@ -26,6 +26,8 @@ set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_executable(refactor_tool RefactorTool.cpp)
+add_executable(leak_example ../tests/tests_data/leak_example.cpp)
+add_executable(perf_example ../tests/tests_data/perf_example.cpp)
 
 # Configure include directories for 'plugin'
 target_include_directories(
